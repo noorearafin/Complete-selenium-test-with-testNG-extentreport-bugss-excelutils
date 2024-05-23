@@ -65,7 +65,7 @@ public class Login extends CommonMethods {
         test.pass(MediaEntityBuilder.createScreenCaptureFromPath(dest).build());
     }
 
-    // Fail
+    // FailCase
     @SuppressWarnings("unused")
     public void failCase(String message, String scName) throws IOException {
         test.fail("<p style=\"color:#FF5353; font-size:13px\"><b>" + message + "</b></p>");
@@ -83,23 +83,23 @@ public class Login extends CommonMethods {
             if(selectlogin.isDisplayed()){
                 selectlogin.click();
                 waittime();
+                passCase("Login Window is opened");
                 try{
                     if (emailfield.isDisplayed()) {
                         emailfield.sendKeys("noorearafin@gmail.com");
-                        passCase("You have entered the username");
+                        passCase("Username entered successfully");
                         waittime();
                         try{
                             if(passwordfield.isDisplayed())
                                 passwordfield.sendKeys("123456");
-                            passCase("You have entered the password");
+                            passCase("Password entered successfully");
                             waittime();
                             try{
                                 if(loginbutton.isDisplayed()){
                                     loginbutton.click();
                                     waittime();
                                     if(userpassvalidation.isDisplayed()) {
-
-                                        passCaseWithSC("Use correct username password", "login_pass");
+                                        passCaseWithSC("Use correct username password message visible properly", "login_pass");
                                     }
                                     else
                                     {
