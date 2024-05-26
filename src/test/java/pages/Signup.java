@@ -3,6 +3,7 @@ package pages;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import drivers.PageDriver;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -84,92 +85,121 @@ public class Signup extends CommonMethods {
     WebElement passwordfield;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//select[@id='days']")
             }
     )
     WebElement dobday;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//option[normalize-space()='1']")
+            }
+    )
+    WebElement dobdayitem;
+    @FindBys(
+            {
+                    @FindBy(xpath = "//select[@id='months']")
             }
     )
     WebElement dobmonth;
-
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//option[normalize-space()='January']")
+            }
+    )
+    WebElement dobmonthitem;
+    @FindBys(
+            {
+                    @FindBy(xpath = "//select[@id='years']")
+            }
+    )
+    WebElement dobyear;
+    @FindBys(
+            {
+                    @FindBy(xpath = "//option[normalize-space()='2000']")
+            }
+    )
+    WebElement dobyearitem;
+    @FindBys(
+            {
+                    @FindBy(xpath = "//input[@id='newsletter']")
             }
     )
     WebElement checkbox1;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='optin']")
             }
     )
     WebElement checkbox2;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='first_name']")
             }
     )
     WebElement firstname;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='last_name']")
             }
     )
     WebElement lastname;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='company']")
             }
     )
     WebElement company;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='address1']")
             }
     )
     WebElement address1;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='address2']")
             }
     )
     WebElement address2;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//select[@id='country']")
             }
     )
     WebElement country;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//option[@value='United States']")
+            }
+    )
+    WebElement countryitem;
+    @FindBys(
+            {
+                    @FindBy(xpath = "//input[@id='state']")
             }
     )
     WebElement state;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='city']")
             }
     )
     WebElement city;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='zipcode']")
             }
     )
     WebElement zipcode;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//input[@id='mobile_number']")
             }
     )
     WebElement mobilenumber;
     @FindBys(
             {
-                    @FindBy(xpath = "//input[@id='password']")
+                    @FindBy(xpath = "//button[normalize-space()='Create Account']")
             }
     )
     WebElement createacc;
@@ -188,7 +218,8 @@ public class Signup extends CommonMethods {
                      passCase("Username entered succesfully");
                      try{
                          if(useremail.isDisplayed()){
-                             useremail.sendKeys("noorearafin@gmail.com");
+                             //use random email cause email is unique
+                             useremail.sendKeys(RandomStringUtils.randomAlphanumeric(10)+"@gmail.com");
                              waittime();
                              passCase("Email entered successfully");
                              try{
@@ -206,13 +237,194 @@ public class Signup extends CommonMethods {
                                                      passwordfield.sendKeys("123456");
                                                      waittime();
                                                      passCase("Password entered successfully");
+                                                     try {
+                                                         if(dobday.isDisplayed()){
+                                                             dobday.click();
+                                                             waittime();
+                                                             passCase("Day dropdown is opened successfully");
+                                                             try {
+                                                                 if(dobdayitem.isDisplayed()){
+                                                                     dobdayitem.click();
+                                                                     waittime();
+                                                                     passCase("Day dropdown item selected successfully");
+                                                                     try {
+                                                                         if(dobmonth.isDisplayed()){
+                                                                             dobmonth.click();
+                                                                             waittime();
+                                                                             passCase("Month dropdown is opened successfully");
+                                                                             try{
+                                                                                 if(dobmonthitem.isDisplayed()){
+                                                                                     dobmonthitem.click();
+                                                                                     waittime();
+                                                                                     passCase("Month dropdown item is opened successfully");
+                                                                                     try {
+                                                                                         if(dobyear.isDisplayed()){
+                                                                                             dobyear.click();
+                                                                                             waittime();
+                                                                                             passCase("Year dropdown is opened successfully");
+                                                                                             try{
+                                                                                                 if(dobyearitem.isDisplayed()){
+                                                                                                     dobyearitem.click();
+                                                                                                     waittime();
+                                                                                                     passCase("Year dropdown item is opened successfully");
+                                                                                                     try {
+                                                                                                         if(checkbox1.isDisplayed()){
+                                                                                                            checkbox1.click();
+                                                                                                            waittime();
+                                                                                                            passCase("First checkbox clicked successfully");
+                                                                                                            try {
+                                                                                                                if(checkbox2.isDisplayed()) {
+                                                                                                                    checkbox2.click();
+                                                                                                                    waittime();
+                                                                                                                    passCase("Second checkbox clicked successfully");
+                                                                                                                    try{
+                                                                                                                        if(firstname.isDisplayed()) {
+                                                                                                                            firstname.sendKeys("Noor e arafin");
+                                                                                                                            waittime();
+                                                                                                                            passCase("First name is inserted successfully");
+                                                                                                                            try {
+                                                                                                                                if(lastname.isDisplayed()){
+                                                                                                                                    lastname.sendKeys("Rafi");
+                                                                                                                                    waittime();
+                                                                                                                                    passCase("Last name is inserted successfully");
+                                                                                                                                    try {
+                                                                                                                                        if(company.isDisplayed()){
+                                                                                                                                            company.sendKeys("abcd Ltd");
+                                                                                                                                            waittime();
+                                                                                                                                            passCase("Company name inserted successfully");
+                                                                                                                                            try {
+                                                                                                                                                if(address1.isDisplayed()){
+                                                                                                                                                    address1.sendKeys("Dhaka,Bangladesh");
+                                                                                                                                                    waittime();
+                                                                                                                                                    passCase("Address1 inserted successfully");
+                                                                                                                                                    try {
+                                                                                                                                                        if(address2.isDisplayed()) {
+                                                                                                                                                            address2.sendKeys("Dhaka,Bangladesh");
+                                                                                                                                                            waittime();
+                                                                                                                                                            passCase("Address2 inserted successfully");
+                                                                                                                                                            try {
+                                                                                                                                                                if(country.isDisplayed()) {
+                                                                                                                                                                    country.click();
+                                                                                                                                                                    waittime();
+                                                                                                                                                                    passCase("Country dropdown selected successfully");
+                                                                                                                                                                    try {
+                                                                                                                                                                        if(countryitem.isDisplayed()) {
+                                                                                                                                                                            countryitem.click();
+                                                                                                                                                                            waittime();
+                                                                                                                                                                            passCase("Country dropdown item selected successfully");
+                                                                                                                                                                            try {
+                                                                                                                                                                                if(state.isDisplayed()) {
+                                                                                                                                                                                    state.sendKeys("Dhaka");
+                                                                                                                                                                                    waittime();
+                                                                                                                                                                                    passCase("State name is inserted successfully");
+                                                                                                                                                                                    try {
+                                                                                                                                                                                        if(city.isDisplayed()){
+                                                                                                                                                                                            city.sendKeys("Dhaka");
+                                                                                                                                                                                            waittime();
+                                                                                                                                                                                            passCase("City name is inserted successfully");
+                                                                                                                                                                                            try {
+                                                                                                                                                                                                if(zipcode.isDisplayed()) {
+                                                                                                                                                                                                    zipcode.sendKeys("12314");
+                                                                                                                                                                                                    waittime();
+                                                                                                                                                                                                    passCase("Zip code is inserted successfully");
+                                                                                                                                                                                                    try {
+                                                                                                                                                                                                        if(mobilenumber.isDisplayed()) {
+                                                                                                                                                                                                            mobilenumber.sendKeys("+88023424324345");
+                                                                                                                                                                                                            waittime();
+                                                                                                                                                                                                            passCase("Mobile number is inserted successfully");
+                                                                                                                                                                                                            try {
+                                                                                                                                                                                                                if(createacc.isDisplayed()){
+                                                                                                                                                                                                                    createacc.click();
+                                                                                                                                                                                                                    waittime();
+                                                                                                                                                                                                                    passCase("Create account successfully");
+                                                                                                                                                                                                                    passCaseWithSC("Signup successfully", "signup_pass");
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }catch (Exception e){
+                                                                                                                                                                                                                failCase("Account is not created successfully","mobile_failed");
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    }catch (Exception e){
+                                                                                                                                                                                                        failCase("Mobile number is not inserted successfully","mobile_failed");
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }catch (Exception e){
+                                                                                                                                                                                                failCase("Zip code is not inserted successfully","zip_failed");
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }catch (Exception e){
+                                                                                                                                                                                        failCase("City name is not inserted successfully","city_failed");
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }catch (Exception e){
+                                                                                                                                                                                failCase("State name is not inserted successfully","state_failed");
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    }catch (Exception e){
+                                                                                                                                                                            failCase("Country dropdown item is not selected successfully","countrydropitem_failed");
+                                                                                                                                                                    }
+                                                                                                                                                                }
+                                                                                                                                                            }catch (Exception e){
+                                                                                                                                                                failCase("Country dropdown is not selected successfully","countrydrop_failed");
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }catch (Exception e){
+                                                                                                                                                        failCase("Address2 is not inserted successfully","address2_failed");
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }catch (Exception e){
+                                                                                                                                                failCase("Address1 is not inserted successfully","address1_failed");
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }catch (Exception e){
+                                                                                                                                        failCase("Company name is not inserted successfully","companyname_failed");
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }catch (Exception e){
+                                                                                                                                failCase("Last name is not inserted successfully","lastname_failed");
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }catch(Exception e){
+                                                                                                                        failCase("First name is not inserted successfully","firstname_failed");
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }catch (Exception e){
+                                                                                                                failCase("Second Checkbox id not clicked succesfully","checkbox2_failed");
+                                                                                                            }
+                                                                                                         }
+                                                                                                     }catch (Exception e){
+                                                                                                         failCase("First Checkbox id not clicked succesfully","checkbox1_failed");
+                                                                                                     }
+                                                                                                 }
+                                                                                             }catch (Exception e){
+                                                                                                 failCase("Year dropdown item is not opened successfully","yeardropdownitem_failed");
+                                                                                             }
+                                                                                         }
+                                                                                     }catch(Exception e){
+                                                                                         failCase("Year dropdown is not opened successfully","yeardropdown_failed");
+                                                                                     }
+                                                                                 }
+                                                                             }catch(Exception e){
+                                                                                 failCase("Month dropdown item is not opened successfully","monthdropdownitem_failed");
+                                                                             }
+                                                                         }
+                                                                     }catch (Exception e){
+                                                                         failCase("Month dropdown is not opened successfully","monthdropdown_failed");
+                                                                     }
+                                                                 }
+                                                             }catch (Exception e){
+                                                                 failCase("Day dropdown item is not opened successfully","daydropdownitem_failed");
+                                                             }
+                                                         }
+                                                     }catch (Exception e){
+                                                         failCase("Day dropdown is not opened successfully","daydropdown_failed");
+                                                     }
                                                  }
                                              }catch (Exception e){
                                                  failCase("Password is not entered successfully","passwordfield_failed");
                                              }
                                          }
                                      }catch(Exception e){
-                                         failCase("Radiobutton worked successfully","radiobutton_failed");
+                                         failCase("Email already Exist","alreadyexist_failed");
                                      }
                                  }
                              }catch (Exception e){
