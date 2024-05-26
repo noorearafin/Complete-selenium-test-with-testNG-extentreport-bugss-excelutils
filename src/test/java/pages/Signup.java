@@ -66,7 +66,7 @@ public class Signup extends CommonMethods {
     WebElement useremail;
     @FindBys(
             {
-                    @FindBy(xpath = "document.querySelector(\"button[data-qa='signup-button']\")")
+                    @FindBy(xpath = "//button[normalize-space()='Signup']")
             }
     )
     WebElement signupbutton;
