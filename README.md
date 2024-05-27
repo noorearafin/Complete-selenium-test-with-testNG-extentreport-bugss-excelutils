@@ -1,16 +1,19 @@
-Automated Website Testing with Selenium, Java, TestNG, and Extent Report
-Overview
+<h1>Automated Website Testing with Selenium, Java, TestNG, and Extent Report</h1>
+
+<h1>Overview</h1>
 This project demonstrates how to automate website testing using Selenium WebDriver with Java, TestNG, and Extent Report. It includes sample test cases for a website, along with setup instructions and usage guidelines.
 
-Table of Contents
-Prerequisites
-Setup
-Usage
-Project Structure
-Contributing
-License
-Prerequisites
-Before running the tests, make sure you have the following installed:
+<h1>Table of Contents</h1>
+<ul>
+<li>Prerequisites</li>
+  <li>Setup</li>
+  <li>Usage</li>
+  <li>Project Structure</li>
+  <li>Contributing</li>
+  <li>License</li>
+</ul>
+
+<h1>Before running the tests, make sure you have the following installed:</h1>
 
 Java Development Kit (JDK)
 Apache Maven
