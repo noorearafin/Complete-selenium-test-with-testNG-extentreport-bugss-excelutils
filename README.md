@@ -24,7 +24,7 @@
 <h2 id="setup">Setup</h2>
 <ol>
     <li>Clone this repository to your local machine:</li>
-    <pre><code>git clone https://github.com/your_username/your_project.git</code></pre>
+    <pre><code>git clone [https://github.com/your_username/your_project.git](https://github.com/noorearafin/Complete-selenium-test-with-testNG-extentreport-bugss-excelutils)</code></pre>
     <li>Navigate to the project directory:</li>
     <pre><code>cd your_project</code></pre>
     <li>Update the <code>pom.xml</code> file with the necessary dependencies.</li>
