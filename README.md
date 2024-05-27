@@ -25,3 +25,35 @@
 <ol>
     <li>Clone this repository to your local machine:</li>
     <pre><code>git clone https://github.com/your_username/your_project.git</code></pre>
+    <li>Navigate to the project directory:</li>
+    <pre><code>cd your_project</code></pre>
+    <li>Update the <code>pom.xml</code> file with the necessary dependencies.</li>
+    <li>Download the compatible web browser driver and configure it in your system's PATH.</li>
+    <li>Update the test scripts according to your website's requirements.</li>
+    <li>Customize the Extent Report configuration if needed.</li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+<ol>
+    <li>Compile the project using Maven:</li>
+    <pre><code>mvn clean compile</code></pre>
+    <li>Run the test suite:</li>
+    <pre><code>mvn test</code></pre>
+    <li>After the test execution completes, find the Extent Report generated in the specified directory.</li>
+</ol>
+
+<h2 id="project-structure">Project Structure</h2>
+<ul>
+    <li><code>src/test/java</code>: Contains the Java test classes.</li>
+    <li><code>src/main/java</code>: Contains any additional Java code required for setup or utilities.</li>
+    <li><code>src/test/resources</code>: Contains any test data or configuration files.</li>
+    <li><code>testng.xml</code>: TestNG configuration file specifying the test suite details.</li>
+    <li><code>pom.xml</code>: Maven project configuration file specifying dependencies and build settings.</li>
+    <li><code>extent-config.xml</code>: Extent Report configuration file.</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.</p>
+
+<h2 id="license">License</h2>
+<p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
