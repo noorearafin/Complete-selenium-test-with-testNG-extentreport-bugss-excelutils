@@ -3,12 +3,12 @@
 <p align="center">This project demonstrates how to automate website testing using Selenium WebDriver with Java, TestNG, and Extent Report. It includes sample test cases for a website, along with setup instructions and usage guidelines.</p>
 
 ## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Prerequisites](#prerequisites) 🛠️
+- [Setup](#setup) ⚙️
+- [Usage](#usage) 🚀
+- [Project Structure](#project-structure) 📁
+- [Contributing](#contributing) 🤝
+- [License](#license) 📝
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before running the tests, make sure you have the following installed:</p>
